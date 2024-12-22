@@ -41,7 +41,7 @@ for semester in range(num_semesters):
     for student in range(num_students_miss_2_tests):
         test_grades = SF.generate_students_grades()
         test_grades = list(itertools.chain.from_iterable(test_grades))
-        missed_tests = [random.randint(0, 14) for _ in range(5)]
+        missed_tests = [random.randint(0, 14) for _ in range(2)]
         for test in missed_tests:
             test_grades[test] = 0
         students2.append(test_grades)
@@ -58,10 +58,9 @@ for semester in range(num_semesters):
         test_grades = SF.generate_students_grades()
         test_grades = list(itertools.chain.from_iterable(test_grades))
 
-        missed_tests = [random.randint(0, 14) for _ in range(5)]
+        missed_tests = [random.randint(0, 14) for _ in range(6)]
         for test in missed_tests:
             test_grades[test] = 0
-        students5.append(test_grades)
         students6.append(test_grades)
 
     data['Semester '+ str(semester)] = [SF.get_group_average(students0), SF.get_group_average(students1),SF.get_group_average(students2), SF.get_group_average(students5), SF.get_group_average(students6)]
